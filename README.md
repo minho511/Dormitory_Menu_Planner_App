@@ -6,6 +6,14 @@ ___
 ___
 
 ### 화면구성
+#### 메인화면
+<img src="https://user-images.githubusercontent.com/57162448/133621692-8a49e2b7-af8b-429a-8557-7c9d64a80f22.png" width=250>
+
+#### 서브화면
+<img src="https://user-images.githubusercontent.com/57162448/133621716-fa8b6b69-31bf-4fe2-8842-93660daea866.png" width=250>
+
+#### 링크이동
+<img src="https://user-images.githubusercontent.com/57162448/133621728-7b86a953-9208-4052-b716-771a7c389ddc.png" width=250>
 
 
 

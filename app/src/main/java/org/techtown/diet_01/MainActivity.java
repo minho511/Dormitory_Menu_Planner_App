@@ -1,12 +1,18 @@
 package org.techtown.diet_01;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.DocumentsContract;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -18,6 +24,8 @@ import org.w3c.dom.Text;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tomorrowTextView;
     TextView dietTomorrowTextView;
     TextView tomorrowTextView2;
-
+    //링크
+    Button btn_link;
     String url = "https://domi.seoultech.ac.kr/support/food/?foodtype=sung";
     final Bundle bundle = new Bundle();
 
@@ -49,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //타이틀바 제거
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
 
         dateTextView = (TextView) findViewById(R.id.datetime);
         dateTextView2 = (TextView) findViewById(R.id.datetime2);
@@ -198,10 +212,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }.start();
-
-
     }
-
+    public void btn_link_Clicked(View v){
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://domi.seoultech.ac.kr/support/food/?foodtype=sung"));
+        startActivity(myIntent);
+    }
 
     private String getTime(){
         mNow = System.currentTimeMillis();

@@ -7,7 +7,7 @@ ___
 
 ### 화면구성
 #### 앱 아이콘
-<img src="https://user-images.githubusercontent.com/57162448/135030916-83ecb433-24ac-498c-85b9-69ac77c7c315.png" width=250>
+<img src="https://user-images.githubusercontent.com/57162448/135030916-83ecb433-24ac-498c-85b9-69ac77c7c315.png">
 #### 메인화면
 <img src="https://user-images.githubusercontent.com/57162448/135030909-f4ceec1c-af69-48cd-844f-5fd94e0c99b4.png" width=250>
 

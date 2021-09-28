@@ -15,28 +15,68 @@
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".MainActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="#EFEFEF"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/t1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="&lt; 식사 시간"
+                android:textColor="#4C4C4C"
+                app:backgroundTint="#00A57878"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.516" />
+
+            <Button
+                android:id="@+id/t2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:shadowColor="#00FFFFFF"
+                android:text="내일 식단 >"
+                android:textColor="#4C4C4C"
+                app:backgroundTint="#00FFFFFF"
+                app:elevation="2dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.516"
+                app:rippleColor="#00FFFFFF" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/datetime"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:paddingTop="10dp"
+            android:background="#EFEFEF"
             android:gravity="center_horizontal"
-
             android:text="로딩중.."
             android:textAlignment="center"
-            android:textSize="30dp" />
+            android:textColor="#373737"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/datetime2"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:textColor="#373737"
+            android:background="#EFEFEF"
             android:gravity="center_vertical|center_horizontal"
             android:text=""
-            android:textSize="25dp" />
+            android:textSize="20dp"
+            android:paddingBottom="10dp"/>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -58,13 +98,13 @@
 
                     <TextView
                         android:id="@+id/dietTextView"
-                        android:textColor="@color/black"
+                        android:textColor="#323232"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="25dp" />
+                        android:textSize="23dp" />
                 </LinearLayout>
             </ScrollView>
 
@@ -72,18 +112,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginBottom="10dp">
+                android:background="#EFEFEF">
 
                 <Button
                     android:id="@+id/btn_link"
-                    android:onClick="btn_link_Clicked"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
-                    android:backgroundTint="#E6B37E"
-                    android:text="긱식 사이트로 이동"
+                    android:onClick="btn_link_Clicked"
+                    android:text="긱식 사이트로 이동 >"
 
+                    android:textColor="#4C4C4C"
+                    app:backgroundTint="#00FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -92,4 +134,5 @@
         </LinearLayout>
     </LinearLayout>
     <include layout = "@layout/activity_main2"></include>
+    <include layout = "@layout/activity_main3"></include>
 </androidx.drawerlayout.widget.DrawerLayout>

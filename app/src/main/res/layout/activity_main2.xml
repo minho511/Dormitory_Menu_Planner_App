@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="end"
     android:background="@color/white"
-    tools:context=".MainActivity2">
+    android:id="@+id/activity_main2"
+    tools:context=".MainActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,23 +20,26 @@
 
         <TextView
             android:id="@+id/datetime_tomorrow"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:background="#EFEFEF"
+            android:paddingTop="50dp"
             android:gravity="center_horizontal"
             android:text="로딩중.."
             android:textAlignment="center"
-            android:textSize="30dp" />
+            android:textColor="#373737"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/datetime2_tomorrow"
-            android:textColor="@color/black"
+            android:textColor="#373737"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
             android:text=""
-            android:textSize="25dp" />
+            android:background="#EFEFEF"
+            android:textSize="20dp"
+            android:paddingBottom="10dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -52,6 +56,7 @@
                 android:orientation="vertical">
 
                 <TextView
+
                     android:id="@+id/dietTextView_tomorrow"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
@@ -59,7 +64,7 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:text=""
                     android:textStyle="bold"
-                    android:textSize="25dp" />
+                    android:textSize="23dp" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

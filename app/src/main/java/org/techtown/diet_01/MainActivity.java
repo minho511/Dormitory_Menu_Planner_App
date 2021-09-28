@@ -3,6 +3,7 @@ package org.techtown.diet_01;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -45,10 +46,20 @@ public class MainActivity extends AppCompatActivity {
     TextView dateTextView;
     TextView dietTextView;
     TextView dateTextView2;
+
     // tomorrow
     TextView tomorrowTextView;
     TextView dietTomorrowTextView;
     TextView tomorrowTextView2;
+
+    //네비
+    private DrawerLayout drawerLayout1;
+    private View drawerView1;
+    private DrawerLayout drawerLayout2;
+    private View drawerView2;
+
+    // 일요일 인지 체크
+    boolean check_sunday = false;
     //링크
     Button btn_link;
     String url = "https://domi.seoultech.ac.kr/support/food/?foodtype=sung";
@@ -63,6 +74,27 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        //네비
+        drawerLayout1 = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerView1 = (View)findViewById(R.id.activity_main2);
+        Button btn_openNavi = findViewById(R.id.t2);
+        btn_openNavi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout1.openDrawer(drawerView1);
+            }
+        });
+
+        //네비2
+        drawerLayout2 = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerView2 = (View)findViewById(R.id.activity_main3);
+        Button btn_openNavi2 = findViewById(R.id.t1);
+        btn_openNavi2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout2.openDrawer(drawerView2);
+            }
+        });
 
         dateTextView = (TextView) findViewById(R.id.datetime);
         dateTextView2 = (TextView) findViewById(R.id.datetime2);
@@ -148,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     if (j+1 == 7){
+                        check_sunday = true;
                         j = 0;
                     }
                     next_date = weeks[j+1];
@@ -182,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                     handler.sendMessage(diet);
 
                     //다음날
-                    if (j+1 == 7){
+                    if (check_sunday == true){
                         bundle.putString("tomorrow_diets", "다음주차 식단 데이터를 가져올 수 없습니다.");
                         Message ndiet = handler.obtainMessage();
                         ndiet.setData(bundle);
